@@ -1,5 +1,7 @@
-package expression;
+package expression.exceptions;
 
+import expression.CommonExpression;
+import expression.TripleExpression;
 import expression.exceptions.OverflowException;
 
 public class CheckedNegate implements CommonExpression {
@@ -11,7 +13,9 @@ public class CheckedNegate implements CommonExpression {
     }
 
     public int evaluate(int x, int y, int z) {
-        return -1 * operand.evaluate(x,y,z);
+        int data = operand.evaluate(x,y,z);
+        check(data);
+        return -1 * data;
     }
 
     public String toString() {

@@ -1,6 +1,7 @@
-package expression;
+package expression.exceptions;
 
-import expression.exceptions.*;
+import expression.TripleExpression;
+import expression.Variable;
 import expression.parser.Either;
 import expression.parser.ParserTest;
 
@@ -19,7 +20,7 @@ public class ExceptionsTest extends ParserTest {
 
     public static final Variable VX = new Variable("x");
     public static final Variable VY = new Variable("y");
-    public static final ParserTest.Reason OVERFLOW = new ParserTest.Reason("Overflow");
+    public static final Reason OVERFLOW = new Reason("Overflow");
 
     static {
         addRange(OVERFLOW_VALUES, D, Integer.MIN_VALUE + D);

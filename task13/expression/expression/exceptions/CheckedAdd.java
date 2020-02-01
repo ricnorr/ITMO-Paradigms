@@ -1,6 +1,6 @@
-package expression;
+package expression.exceptions;
 
-import expression.exceptions.OverflowException;
+import expression.CommonExpression;
 
 public class CheckedAdd extends CheckedArithmetic {
 
@@ -13,16 +13,16 @@ public class CheckedAdd extends CheckedArithmetic {
         check(leftOperand, rightOperand);
         return leftOperand + rightOperand;
     }
-    //@Override
-    //protected double calculateOperation(double leftOperand, double rightOperand) {return leftOperand + rightOperand;}
+
     @Override
     protected String getStringOperation() {
         return "+";
     }
 
     protected void check(int leftOperand, int rightOperand) throws OverflowException {
-        if (leftOperand > Integer.MAX_VALUE - rightOperand && leftOperand < Integer.MIN_VALUE - rightOperand) {
-            throw new OverflowException("overflow");
+        if (leftOperand > 0 && rightOperand > 0 && leftOperand + rightOperand < 0
+                || leftOperand < 0 && rightOperand < 0 && leftOperand + rightOperand >= 0) {
+            throw new OverflowException("Overflow addition");
         }
     }
 }

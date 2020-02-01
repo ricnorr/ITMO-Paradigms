@@ -1,6 +1,6 @@
-package expression;
+package expression.exceptions;
 
-import expression.exceptions.DivisionByZeroException;
+import expression.CommonExpression;
 
 public class CheckedDivide extends CheckedArithmetic {
 
@@ -14,14 +14,12 @@ public class CheckedDivide extends CheckedArithmetic {
         return leftOperand / rightOperand;
     }
 
-    //protected double calculateOperation(double leftOperand, double rightOperand) {
-        //check(leftOperand, rightOperand);
-        //return leftOperand / rightOperand;
-    //}
-
     protected void check(int leftOperand, int rightOperand) {
         if (rightOperand == 0) {
             throw new DivisionByZeroException("division by zero");
+        }
+        if (leftOperand == Integer.MIN_VALUE && rightOperand == -1) {
+            throw new OverflowException("Overflow in division");
         }
     }
 

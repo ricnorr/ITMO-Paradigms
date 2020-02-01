@@ -1,15 +1,18 @@
-package expression;
+package expression.exceptions;
 
-import expression.exceptions.OverflowException;
+import expression.CommonExpression;
 
-public class CheckedMultiply extends expression.CheckedArithmetic {
+public class CheckedMultiply extends CheckedArithmetic {
 
     public CheckedMultiply(CommonExpression leftOperand, CommonExpression rightOperand) {
         super(leftOperand, rightOperand);
     }
 
     protected void check(int firstOperand, int secondOperand) throws OverflowException {
-        if (secondOperand!= 0 && firstOperand != firstOperand * secondOperand / secondOperand) {
+        if (firstOperand > 0 && secondOperand > 0 && firstOperand > Integer.MAX_VALUE / secondOperand
+                || firstOperand < 0 && secondOperand > 0 && firstOperand < Integer.MIN_VALUE / secondOperand
+                || firstOperand < 0 && secondOperand < 0 &&  firstOperand < Integer.MAX_VALUE / secondOperand
+                || firstOperand > 0 && secondOperand < 0 &&  secondOperand < Integer.MIN_VALUE / firstOperand) {
             throw new OverflowException("overflow");
         }
     }

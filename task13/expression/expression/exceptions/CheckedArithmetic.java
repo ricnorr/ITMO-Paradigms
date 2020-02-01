@@ -1,4 +1,6 @@
-package expression;
+package expression.exceptions;
+
+import expression.CommonExpression;
 
 public abstract class CheckedArithmetic implements CommonExpression {
 
@@ -16,6 +18,7 @@ public abstract class CheckedArithmetic implements CommonExpression {
     //protected abstract void check (int left, int right) throws OverflowException;
 
     public int evaluate(int x, int y, int z) {
+        //System.out.println(x + " " + y + " " + z);
         return calculateOperation(operand1.evaluate(x, y, z), operand2.evaluate(x, y, z));
     }
 

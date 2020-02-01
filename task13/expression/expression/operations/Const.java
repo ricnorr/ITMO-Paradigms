@@ -2,6 +2,7 @@ package expression.operations;
 
 
 import expression.CommonExpression;
+import expression.exceptions.OverflowException;
 
 public class Const implements CommonExpression {
 
@@ -15,9 +16,15 @@ public class Const implements CommonExpression {
 
     @Override
     public int evaluate(int x, int y, int z) {
+        check(value);
         return value.intValue();
     }
 
+    private void check(Number x) {
+        if (x.longValue() > Integer.MAX_VALUE || x.longValue() < Integer.MIN_VALUE) {
+            throw new OverflowException("Const overflow");
+        }
+    }
 
     public boolean equals(Object x) {
         if (x != null && this.getClass() == x.getClass() && this.value.equals(((Const) x).value)) {

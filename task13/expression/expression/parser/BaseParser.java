@@ -4,15 +4,18 @@ package expression.parser;
 public class BaseParser {
     private ExpressionSource source;
     protected char ch;
-
+    protected char prevCh;
     protected BaseParser(ExpressionSource source) {
         this.source = source;
     }
 
     protected void nextChar() {
+        prevCh = ch;
         ch = source.hasNext() ? source.nextChar() : '\0';
     }
-    protected void backChar() {ch = source.backChar();}
+    protected void backChar() {
+        ch = source.backChar();
+    }
 
     protected boolean test(char expected) {
         if (ch == expected) {
