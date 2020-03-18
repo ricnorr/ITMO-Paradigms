@@ -1,4 +1,4 @@
-package operations;
+package expression.generic.operations;
 
 public class DoubleCalculation implements Calculation<Double> {
     @Override

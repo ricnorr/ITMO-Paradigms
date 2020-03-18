@@ -1,7 +1,8 @@
-package operations;
+package expression.generic.calculation;
 
-import exceptions.DivisionByZeroException;
-import exceptions.ParsingException;
+import expression.generic.exceptions.DivisionByZeroException;
+import expression.generic.exceptions.ParsingException;
+import expression.generic.operations.Calculation;
 
 public class LongCalculation implements Calculation<Long> {
 

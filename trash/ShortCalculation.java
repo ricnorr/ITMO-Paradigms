@@ -1,7 +1,8 @@
-package operations;
+package expression.generic.calculation;
 
-import exceptions.DivisionByZeroException;
-import exceptions.ParsingException;
+import expression.generic.exceptions.DivisionByZeroException;
+import expression.generic.exceptions.ParsingException;
+import expression.generic.operations.Calculation;
 
 public class ShortCalculation implements Calculation<Short> {
 
@@ -34,7 +35,7 @@ public class ShortCalculation implements Calculation<Short> {
     }
 
     @Override
-    public Short transform(String s) throws ParsingException {
+    public Short transform(String s) {
         return Short.parseShort(s);
     }
 
