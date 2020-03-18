@@ -22,6 +22,10 @@ public class GenericTabulator implements Tabulator {
                  return new DoubleCalculation();
             case ("bi"):
                 return new BigIntegerCalculation();
+            case ("l"):
+                return new LongCalculation();
+            case ("s"):
+                return new ShortCalculation();
             default:
                 throw new IllegalParsingModeException("Illegal parsing mode chosen");
         }
