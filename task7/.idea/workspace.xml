@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="65e4a8e8-7546-4a83-be64-7346b9239ed5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/task7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../trash/GenericTabulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tests/out/production/Tests/jstest/functional/functionalExpression.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Tests/out/production/Tests/jstest/functional/functionalExpression.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tests/src/jstest/functional/functionalExpression.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Tests/src/jstest/functional/functionalExpression.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/exceptions/CalculatingExpressionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/exceptions/CalculatingExpressionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/exceptions/DivisionByZeroException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/exceptions/DivisionByZeroException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/exceptions/IllegalArgumentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/exceptions/IllegalArgumentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/exceptions/NoBracketException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/exceptions/NoBracketException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/exceptions/OverflowException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/exceptions/OverflowException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/exceptions/ParsingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/exceptions/ParsingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/exceptions/UnderflowException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/exceptions/UnderflowException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/expression/generic/GenericTabulator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/BigIntegerCalculation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Calculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CheckedAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CheckedArithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/AbstractArithmetic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CheckedDivide.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Divide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CheckedMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Max.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CheckedMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Min.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CheckedMultiply.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Multiply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CheckedNegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Negate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CheckedSubtract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Subtract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/CommonExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/CommonExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/Count.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Count.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/DoubleCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/calculation/DoubleCalculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/IntCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/calculation/IntCalculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/LongCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../trash/LongCalculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/ShortCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../trash/ShortCalculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/operations/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/operations/Variable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/parser/BaseParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/parser/BaseParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/parser/CommonExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/parser/CommonExpressionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/parser/ExpressionSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/parser/ExpressionSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task5/src/parser/StringSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task5/src/expression/generic/parser/StringSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task6/.idea/jstest/functional/FunctionalExpression.js" beforeDir="false" afterPath="$PROJECT_DIR$/../task6/.idea/jstest/functional/FunctionalExpression.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\ricnorr\Desktop\attemptsWithGit\task7\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZJ749xlvC6cokl8h9TfhPVk3bq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="objectExpression.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/objectExpression.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.objectExpression.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65e4a8e8-7546-4a83-be64-7346b9239ed5" name="Default Changelist" comment="" />
+      <created>1584545148884</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584545148884</updated>
+      <workItem from="1584545152342" duration="9650000" />
+      <workItem from="1584557815772" duration="2659000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
