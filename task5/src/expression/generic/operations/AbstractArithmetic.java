@@ -1,12 +1,12 @@
-package operations;
+package expression.generic.operations;
 
-public abstract class CheckedArithmetic<T extends Number> implements CommonExpression<T> {
+public abstract class AbstractArithmetic<T extends Number> implements CommonExpression<T> {
 
     private CommonExpression <T> operand1;
     private CommonExpression <T> operand2;
     protected Calculation<T> op;
 
-    public CheckedArithmetic(CommonExpression operand1, CommonExpression operand2, Calculation<T> op) {
+    public AbstractArithmetic(CommonExpression operand1, CommonExpression operand2, Calculation<T> op) {
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.op = op;
@@ -22,7 +22,7 @@ public abstract class CheckedArithmetic<T extends Number> implements CommonExpre
     @Override
     public boolean equals(Object x) {
         if (x != null && this.getClass() == x.getClass()) {
-            CheckedArithmetic temp = (CheckedArithmetic) x;
+            AbstractArithmetic temp = (AbstractArithmetic) x;
             return operand1.equals(temp.operand1) && operand2.equals(temp.operand2);
         }
         return false;

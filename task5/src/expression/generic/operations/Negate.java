@@ -1,11 +1,11 @@
-package operations;
+package expression.generic.operations;
 
-public class CheckedNegate<T extends Number> implements CommonExpression<T> {
+public class Negate<T extends Number> implements CommonExpression<T> {
 
     private CommonExpression<T> operand;
     private Calculation<T> op;
 
-    public CheckedNegate(CommonExpression operand, Calculation<T> op) {
+    public Negate(CommonExpression operand, Calculation<T> op) {
         this.op = op;
         this.operand = operand;
     }

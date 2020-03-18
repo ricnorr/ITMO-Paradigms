@@ -1,4 +1,4 @@
-package operations;
+package expression.generic.operations;
 
 public class Count<T extends Number> implements CommonExpression<T> {
 

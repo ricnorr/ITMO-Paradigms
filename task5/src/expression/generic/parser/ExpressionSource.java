@@ -1,4 +1,4 @@
-package parser;
+package expression.generic.parser;
 
 public interface ExpressionSource {
     char nextChar();

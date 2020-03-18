@@ -1,6 +1,6 @@
-package parser;
+package expression.generic.parser;
 
-import operations.CommonExpression;
+import expression.generic.operations.CommonExpression;
 
 /**
  * @author Georgiy Korneev (kgeorgiy@kgeorgiy.info)

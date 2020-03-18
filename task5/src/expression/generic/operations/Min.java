@@ -1,8 +1,8 @@
-package operations;
+package expression.generic.operations;
 
-public class CheckedMin<T extends Number> extends CheckedArithmetic<T> {
+public class Min<T extends Number> extends AbstractArithmetic<T> {
 
-    public CheckedMin(CommonExpression operand1, CommonExpression operand2, Calculation<T> op) {
+    public Min(CommonExpression operand1, CommonExpression operand2, Calculation<T> op) {
         super(operand1, operand2, op);
     }
 

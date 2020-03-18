@@ -1,9 +1,9 @@
-package operations;
+package expression.generic.operations;
 
 
-public class CheckedDivide<T extends  Number> extends CheckedArithmetic<T> {
+public class Divide<T extends  Number> extends AbstractArithmetic<T> {
 
-    public CheckedDivide(CommonExpression leftOperand, CommonExpression rightOperand, Calculation<T> op) {
+    public Divide(CommonExpression leftOperand, CommonExpression rightOperand, Calculation<T> op) {
         super(leftOperand, rightOperand, op);
     }
 

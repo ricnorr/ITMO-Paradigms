@@ -1,8 +1,8 @@
-package operations;
+package expression.generic.operations;
 
-public class CheckedMultiply<T extends Number> extends CheckedArithmetic<T> {
+public class Multiply<T extends Number> extends AbstractArithmetic<T> {
 
-    public CheckedMultiply(CommonExpression<T> leftOperand, CommonExpression<T> rightOperand, Calculation<T> op) {
+    public Multiply(CommonExpression<T> leftOperand, CommonExpression<T> rightOperand, Calculation<T> op) {
         super(leftOperand, rightOperand, op);
     }
 

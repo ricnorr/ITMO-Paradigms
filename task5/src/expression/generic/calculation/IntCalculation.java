@@ -1,8 +1,9 @@
-package expression.generic.operations;
+package expression.generic.calculation;
 
 import expression.generic.exceptions.DivisionByZeroException;
 import expression.generic.exceptions.OverflowException;
 import expression.generic.exceptions.UnderflowException;
+import expression.generic.operations.Calculation;
 
 public class IntCalculation implements Calculation<Integer> {
 

@@ -1,8 +1,8 @@
-package operations;
+package expression.generic.operations;
 
 
-public class CheckedSubtract<T extends Number> extends CheckedArithmetic<T> {
-    public CheckedSubtract(CommonExpression leftOperand, CommonExpression rightOperand, Calculation<T> op) {
+public class Subtract<T extends Number> extends AbstractArithmetic<T> {
+    public Subtract(CommonExpression leftOperand, CommonExpression rightOperand, Calculation<T> op) {
         super(leftOperand, rightOperand, op);
     }
 

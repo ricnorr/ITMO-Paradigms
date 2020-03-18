@@ -1,4 +1,4 @@
-package exceptions;
+package expression.generic.exceptions;
 
 public class OverflowException extends CalculatingExpressionException {
     public OverflowException(String message) {

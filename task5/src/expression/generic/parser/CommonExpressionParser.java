@@ -1,13 +1,13 @@
-package parser;
+package expression.generic.parser;
 
-import exceptions.ParsingException;
-import operations.*;
+import expression.generic.exceptions.ParsingException;
+import expression.generic.operations.*;
 
 import java.util.Map;
 import java.util.Set;
 
     public class CommonExpressionParser<T extends Number> extends BaseParser {
-        private Calculation op;
+        private final Calculation<T> calc;
 
         private final Map<String, Integer> PRIORITY = Map.of(
                 "*", 3,
@@ -21,14 +21,10 @@ import java.util.Set;
 
         private final Set<Character> AFTER_VARIABLE = Set.of('*','-', ')', ' ', '+', '/', '\0', '\t', '\r');
 
-        public CommonExpressionParser(String data, Calculation op) {
+        public CommonExpressionParser(String data, Calculation<T> op) {
             super(new StringSource(data));
             nextChar();
-            this.op = op;
-        }
-
-        public Calculation<T> getCalc() {
-            return op;
+            this.calc = op;
         }
 
         public CommonExpression<T> parse() throws ParsingException {
@@ -46,7 +42,6 @@ import java.util.Set;
             if (result == null) {
                 throw new ParsingException("Empty expression");
             }
-
             return result;
         }
 
@@ -66,11 +61,11 @@ import java.util.Set;
                     backChar();
                     return getConst();
                 }
-                return new CheckedNegate<T>(parseToken(), op);
+                return new Negate<>(parseToken(), calc);
             }
             if (test('c')) {
                 if (test('o') && test('u') && test('n') && test('t')) {
-                    return new Count<T>(parseToken(), op);
+                    return new Count<>(parseToken(), calc);
                 } else {
                     throw new ParsingException("Expected count");
                 }
@@ -105,10 +100,11 @@ import java.util.Set;
                         test('m');
                         if (test('i') && test('n')) {
                             leftOperand = parseMin(leftOperand);
+                            break;
                         } else if (test('a') && test('x')) {
                             leftOperand = parseMax(leftOperand);
+                            break;
                         }
-                        break;
                     default:
                         throw new ParsingException("Illegal symbol " + "\'" + ch+ "\'" + " at position " + getPointer());
                 }
@@ -125,27 +121,27 @@ import java.util.Set;
 
 
         private CommonExpression<T> parseMax(CommonExpression<T> leftOperand) throws ParsingException {
-            return new CheckedMax<T>(leftOperand, parseOperandExpression(PRIORITY.get("m"), null), op);
+            return new Max<>(leftOperand, parseOperandExpression(PRIORITY.get("m"), null), calc);
         }
 
         private CommonExpression<T> parseMin(CommonExpression<T> leftOperand) throws ParsingException {
-            return new CheckedMin<T>(leftOperand, parseOperandExpression(PRIORITY.get("m"), null), op);
+            return new Min<>(leftOperand, parseOperandExpression(PRIORITY.get("m"), null), calc);
         }
 
         private CommonExpression<T> parseSumSub(CommonExpression<T> leftOperand, char tempCh) throws ParsingException {
             nextChar();
             if (tempCh == '-') {
-                return new CheckedSubtract<T>(leftOperand, parseOperandExpression(1, null), op);
+                return new Subtract<>(leftOperand, parseOperandExpression(1, null), calc);
             } else {
-                return new CheckedAdd<T>(leftOperand, parseOperandExpression(1, null), op);}
+                return new Add<>(leftOperand, parseOperandExpression(1, null), calc);}
         }
 
         private CommonExpression<T> parseMultDev(CommonExpression<T> leftOperand, char ch) throws ParsingException {
             nextChar();
             if (ch == '*') {
-                return new CheckedMultiply<T>(leftOperand, parseOperandExpression(PRIORITY.get("*"), null), op);
+                return new Multiply<>(leftOperand, parseOperandExpression(PRIORITY.get("*"), null), calc);
             }  else {
-                return new CheckedDivide<T>(leftOperand, parseOperandExpression(PRIORITY.get("/"), null), op);
+                return new Divide<>(leftOperand, parseOperandExpression(PRIORITY.get("/"), null), calc);
             }
         }
 
@@ -162,7 +158,7 @@ import java.util.Set;
                 throw new ParsingException("Illegal symbol in variable name " + "\'" + ch + "\' " + "at position " + getPointer() );
             }
 
-            return new Variable<T>(variableName.toString(), op);
+            return new Variable<>(variableName.toString(), calc);
         }
 
         private void copyDigits(final StringBuilder sb) {
@@ -192,7 +188,7 @@ import java.util.Set;
         private Const<T> getConst() throws ParsingException {
             StringBuilder sb = new StringBuilder();
             parseConst(sb);
-            return new Const<T>((T) op.transform(sb.toString()));
+            return new Const<>(calc.transform(sb.toString()));
         }
 
         private void skipWhitespace() {

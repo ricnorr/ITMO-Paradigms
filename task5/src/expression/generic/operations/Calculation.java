@@ -1,6 +1,6 @@
-package operations;
+package expression.generic.operations;
 
-import exceptions.ParsingException;
+import expression.generic.exceptions.ParsingException;
 
 public interface Calculation<T extends Number> {
     T add(T a, T b);

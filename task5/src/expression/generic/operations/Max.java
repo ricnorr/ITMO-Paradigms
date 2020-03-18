@@ -1,8 +1,8 @@
-package operations;
+package expression.generic.operations;
 
-public class CheckedMax<T extends Number> extends CheckedArithmetic<T> {
+public class Max<T extends Number> extends AbstractArithmetic<T> {
 
-    public CheckedMax(CommonExpression operand1, CommonExpression operand2, Calculation<T> op) {
+    public Max(CommonExpression operand1, CommonExpression operand2, Calculation<T> op) {
         super(operand1, operand2, op);
     }
 
