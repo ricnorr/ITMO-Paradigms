@@ -28,10 +28,8 @@ public class ArrayQueue extends AbstractQueue {
 
     @Override
     protected Object dequeueReal() {
-        assert size > 0;
         Object result = element();
         elements[getHeadNum()] = null;
-        size--;
         return result;
     }
 
