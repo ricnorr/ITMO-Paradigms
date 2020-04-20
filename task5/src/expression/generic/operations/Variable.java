@@ -22,18 +22,4 @@ public class Variable<T extends Number> implements CommonExpression<T> {
         }
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
-
-    @Override
-    public boolean equals(Object x) {
-        return (x instanceof Variable && this.name.equals(((Variable) x).name));
-    }
-
-    @Override
-    public int hashCode() {
-        return name.hashCode();
-    }
 }

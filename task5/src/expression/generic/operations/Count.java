@@ -5,7 +5,7 @@ public class Count<T extends Number> implements CommonExpression<T> {
     private final CommonExpression<T> data;
     private final Calculation<T> op;
 
-    public Count(CommonExpression operand1, Calculation<T> op) {
+    public Count(CommonExpression<T> operand1, Calculation<T> op) {
         this.data = operand1;
         this.op = op;
     }

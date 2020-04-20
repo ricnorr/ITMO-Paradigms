@@ -106,13 +106,13 @@ import java.util.Set;
                             break;
                         }
                     default:
-                        throw new ParsingException("Illegal symbol " + "\'" + ch+ "\'" + " at position " + getPointer());
+                        throw new ParsingException("Illegal symbol " + "\'" + ch + "\'" + " at position " + getPointer());
                 }
             }
             return leftOperand;
         }
 
-        private CommonExpression<T> parseOperandExpression(int lvl, CommonExpression leftOperand)  throws ParsingException  {
+        private CommonExpression<T> parseOperandExpression(int lvl, CommonExpression<T> leftOperand)  throws ParsingException  {
              if (leftOperand == null) {
                  leftOperand = parseToken();
              }
@@ -129,16 +129,16 @@ import java.util.Set;
         }
 
         private CommonExpression<T> parseSumSub(CommonExpression<T> leftOperand, char tempCh) throws ParsingException {
-            nextChar();
+            test(tempCh);
             if (tempCh == '-') {
                 return new Subtract<>(leftOperand, parseOperandExpression(1, null), calc);
             } else {
                 return new Add<>(leftOperand, parseOperandExpression(1, null), calc);}
         }
 
-        private CommonExpression<T> parseMultDev(CommonExpression<T> leftOperand, char ch) throws ParsingException {
-            nextChar();
-            if (ch == '*') {
+        private CommonExpression<T> parseMultDev(CommonExpression<T> leftOperand, char tempCh) throws ParsingException {
+            test(tempCh);
+            if (tempCh == '*') {
                 return new Multiply<>(leftOperand, parseOperandExpression(PRIORITY.get("*"), null), calc);
             }  else {
                 return new Divide<>(leftOperand, parseOperandExpression(PRIORITY.get("/"), null), calc);

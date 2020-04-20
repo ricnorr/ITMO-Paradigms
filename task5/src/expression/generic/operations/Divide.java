@@ -3,7 +3,7 @@ package expression.generic.operations;
 
 public class Divide<T extends  Number> extends AbstractArithmetic<T> {
 
-    public Divide(CommonExpression leftOperand, CommonExpression rightOperand, Calculation<T> op) {
+    public Divide(CommonExpression<T> leftOperand, CommonExpression<T> rightOperand, Calculation<T> op) {
         super(leftOperand, rightOperand, op);
     }
 

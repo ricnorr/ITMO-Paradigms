@@ -6,8 +6,16 @@ import expression.generic.exceptions.UnderflowException;
 import expression.generic.operations.Calculation;
 
 public class IntCalculation implements Calculation<Integer> {
+    private boolean beChecked;
 
-    protected void checkSubtractOverflow(Integer leftOperand, Integer rightOperand) throws OverflowException {
+    public IntCalculation(boolean beChecked) {
+        this.beChecked = beChecked;
+    }
+
+    private void checkSubtractOverflow(Integer leftOperand, Integer rightOperand) {
+        if (!beChecked) {
+            return;
+        }
         if (leftOperand >= 0 && rightOperand < 0 && leftOperand - rightOperand < 0) {
             throw new OverflowException("overflow subtract");
         }
@@ -17,6 +25,9 @@ public class IntCalculation implements Calculation<Integer> {
     }
 
     private void checkConstOverflow(Number x) {
+        if (!beChecked) {
+            return;
+        }
         if (x.longValue() > Integer.MAX_VALUE) {
             throw new OverflowException("Integer const overflow: " + x);
         }
@@ -26,6 +37,9 @@ public class IntCalculation implements Calculation<Integer> {
     }
 
     private void checkMultOverflow(Integer firstOperand, Integer secondOperand) {
+        if (!beChecked) {
+            return;
+        }
         if (firstOperand > 0 && secondOperand > 0 && firstOperand > Integer.MAX_VALUE / secondOperand
                 || firstOperand < 0 && secondOperand > 0 && firstOperand < Integer.MIN_VALUE / secondOperand
                 || firstOperand < 0 && secondOperand < 0 && firstOperand < Integer.MAX_VALUE / secondOperand
@@ -34,7 +48,10 @@ public class IntCalculation implements Calculation<Integer> {
         }
     }
 
-    protected void checkSumOverflow(int leftOperand, int rightOperand) {
+    private void checkSumOverflow(int leftOperand, int rightOperand) {
+        if (!beChecked) {
+            return;
+        }
         if (leftOperand > 0 && rightOperand > 0 && leftOperand + rightOperand < 0
                 || leftOperand < 0 && rightOperand < 0 && leftOperand + rightOperand >= 0) {
             throw new OverflowException("overflow sum");
@@ -42,6 +59,9 @@ public class IntCalculation implements Calculation<Integer> {
     }
 
     private void checkNegateOverflow(Integer x) {
+        if (!beChecked) {
+            return;
+        }
         if (x == Integer.MIN_VALUE) {
             throw new OverflowException("overflow negate");
         }

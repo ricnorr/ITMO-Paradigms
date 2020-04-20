@@ -2,7 +2,7 @@ package expression.generic.operations;
 
 public class Add<T extends Number> extends AbstractArithmetic<T> {
 
-    public Add(CommonExpression leftOperand, CommonExpression rightOperand, Calculation<T> op) {
+    public Add(CommonExpression<T> leftOperand, CommonExpression<T> rightOperand, Calculation<T> op) {
         super(leftOperand, rightOperand, op);
     }
 

@@ -2,7 +2,7 @@ package expression.generic.operations;
 
 public class Max<T extends Number> extends AbstractArithmetic<T> {
 
-    public Max(CommonExpression operand1, CommonExpression operand2, Calculation<T> op) {
+    public Max(CommonExpression<T> operand1, CommonExpression<T> operand2, Calculation<T> op) {
         super(operand1, operand2, op);
     }
 

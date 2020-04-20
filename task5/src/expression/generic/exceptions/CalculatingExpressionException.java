@@ -5,6 +5,3 @@ public class CalculatingExpressionException extends RuntimeException {
         super(message);
     }
 }
-//try catch
-//иерархия
-//читаемые

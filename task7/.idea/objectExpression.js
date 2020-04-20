@@ -2,92 +2,66 @@
 
 let variableTable = {"x" : 0, "y" : 1, "z" : 2};
 
-function BinaryOperation(op1, op2, func, strOp) {
-    this.op1 = op1;
-    this.op2 = op2;
+function Operation(func, strOp) {
     this.func = func;
     this.strOp = strOp;
-    Object.setPrototypeOf(this, BinaryOperation.prototype);
+    return function (...args) {
+        this.ops = args;
+    }
 }
 
-BinaryOperation.prototype.getStrOp = function() {
-    return this.strOp;
+function makeOperation(...args1) {
+    let args = arguments;
+    let x = function(...args2) {
+        return Operation.apply(this, args).apply(this, args2);
+    }
+    x.prototype = Object.create(Operation.prototype);
+    return x;
 }
 
-BinaryOperation.prototype.evaluate = function() {
-    return this.func(this.op1.evaluate.apply(this.op1, arguments), this.op2.evaluate.apply(this.op2, arguments));
+Operation.prototype.evaluate = function() {
+    let res = [];
+    for (let i = 0; i < this.ops.length; i++) {
+        res.push(this.ops[i].evaluate.apply(this.ops[i], arguments));
+    }
+    return this.func(...res);
 }
 
-BinaryOperation.prototype.toString = function() {
-    return this.op1.toString() + " " + this.op2.toString() + " " + this.getStrOp();
+Operation.prototype.toString = function() {
+    return this.ops.join(" ") + " " + this.strOp;
 }
 
-function UnaryOperation(op1, func, str) {
-    this.op1 = op1;
-    this.func = func;
-    this.strOp = str;
-    Object.setPrototypeOf(this, UnaryOperation.prototype);
-}
 
-UnaryOperation.prototype.getStrOp = function() {
-    return this.strOp;
-}
+let Add = makeOperation((a,b) => (a + b), "+");
+let Subtract = makeOperation((a, b) => (a - b), "-");
+let Multiply = makeOperation((a , b) => (a * b), "*");
+let Divide = makeOperation((a , b) => (a /b), "/");
+let Negate = makeOperation((a) => (-a), "negate");
+let Log = makeOperation((a,b) => (Math.log(Math.abs(b))/Math.log(Math.abs(a))), "log");
+let Power = makeOperation((a,b) => (Math.pow(a, b)), "pow");
+let Min3 = makeOperation((a,b,c)=> (Math.min(a,b,c)), "min");
+let Max5 = makeOperation((a,b,c,d,e) => (Math.max(a,b,c,d,e)), "max");
 
-UnaryOperation.prototype.evaluate = function() {
-    return this.func(this.op1.evaluate.apply(this.op1, arguments));
-}
-
-UnaryOperation.prototype.toString = function() {
-    return this.op1.toString() + " " + this.getStrOp();
-}
-
-function Subtract(op1, op2) {
-    BinaryOperation.call(this, op1, op2, (a,b) => (a - b), "-");
-}
-
-function Multiply(op1, op2) {
-    BinaryOperation.call(this, op1, op2, (a,b) => (a * b), "*");
-}
-
-function Divide(op1, op2) {
-    BinaryOperation.call(this, op1, op2, (a,b) => (a / b), "/");
-}
-
-function Negate(op1) {
-    UnaryOperation.call(this, op1, (a) => (-a), "negate");
-}
-
-function Variable(name) {
-    this.name = name;
+function Variable() {
+    this.name = arguments[0];
 }
 
 Variable.prototype.evaluate = function() {
-    for (let i = 0; i < arguments.length; i++) {
-        if (variableTable[this.name] == i) {
-            return arguments[i];
-        }
-    }
+    return arguments[variableTable[this.name]];
 }
 
 Variable.prototype.toString = function() {
     return this.name;
 }
 
-function Add(op1, op2) {
-   BinaryOperation.call(this, op1, op2, (a, b) => (a + b), "+");
+function Const() {
+    this.op1 = arguments[0];
 }
 
-
-function Const(op1) {
-    this.op1 = op1;
+Const.prototype.evaluate = function() {
+    return this.op1;
 }
-
- Const.prototype.evaluate = function() {
-     return this.op1;
- }
 
 Const.prototype.toString = function() {
     return this.op1.toString();
 }
-
-

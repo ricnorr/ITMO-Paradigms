@@ -8,8 +8,8 @@ import java.math.BigInteger;
 public class BigIntegerCalculation implements Calculation<BigInteger> {
 
     private void checkDVZ(BigInteger b) {
-        if (b.intValue() == 0) {
-            throw new DivisionByZeroException("BigInt DVZ");
+        if (b.equals(BigInteger.ZERO)) { // :NOTE: compare with `BigInteger.ZERO` instead
+            throw new DivisionByZeroException("DVZ in BigInteger");
         }
     }
 
@@ -20,20 +20,12 @@ public class BigIntegerCalculation implements Calculation<BigInteger> {
 
     @Override
     public BigInteger max(BigInteger a, BigInteger b) {
-        if (a.compareTo(b) >= 0) {
-            return a;
-        } else {
-            return b;
-        }
-    }
+        return a.max(b);
+    } // :NOTE: use `BigInteger#max` instead
 
     @Override
     public BigInteger min(BigInteger a, BigInteger b) {
-        if (a.compareTo(b) >= 0) {
-            return b;
-        } else {
-            return a;
-        }
+        return a.min(b);
     }
 
     @Override

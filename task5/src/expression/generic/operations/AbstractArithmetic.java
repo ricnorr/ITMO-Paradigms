@@ -6,7 +6,7 @@ public abstract class AbstractArithmetic<T extends Number> implements CommonExpr
     private CommonExpression <T> operand2;
     protected Calculation<T> op;
 
-    public AbstractArithmetic(CommonExpression operand1, CommonExpression operand2, Calculation<T> op) {
+    public AbstractArithmetic(CommonExpression<T> operand1, CommonExpression<T> operand2, Calculation<T> op) {
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.op = op;
@@ -19,13 +19,5 @@ public abstract class AbstractArithmetic<T extends Number> implements CommonExpr
         return calculateOperation(operand1.evaluate(x, y, z), operand2.evaluate(x, y, z));
     }
 
-    @Override
-    public boolean equals(Object x) {
-        if (x != null && this.getClass() == x.getClass()) {
-            AbstractArithmetic temp = (AbstractArithmetic) x;
-            return operand1.equals(temp.operand1) && operand2.equals(temp.operand2);
-        }
-        return false;
-    }
 
 }
