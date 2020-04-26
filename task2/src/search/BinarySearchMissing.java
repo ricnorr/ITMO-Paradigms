@@ -1,5 +1,8 @@
 package search;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinarySearchMissing {
     // Pre: args.length > 0 ^ (int)args[i - 1] >= (int)args[i] ^ 1 <= i < args.len - 1
     // Post: void
