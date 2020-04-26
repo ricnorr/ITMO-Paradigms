@@ -26,19 +26,16 @@
 
 (defn m*v [a b] transpose (mapv (partial scalar b) a))
 
-(defn m*m [a b] (mapv #(mapv (partial scalar %1) (transpose b)) a))
+(defn m*m [a b] (let [transB (transpose b)] (mapv #(mapv (partial scalar %1) transB) a)))
 
-(defn vect [a b] (letfn [(det [i, j] (- (* (get a i) (get b j))(* (get a j) (get b i))))]
-                   [(det 1 2) (- (det 0 2)) (det 0 1)]))
+(defn vect [a b]
+  (letfn [(det [i, j] (- (* (get a i) (get b j))(* (get a j) (get b i))))]
+                    [(det 1 2) (- (det 0 2)) (det 0 1)]))
 
-(defn extraCarcas [func a b]
-  (if (and (number? a) (number? b)) (func a b) (mapv (partial extraCarcas func) a b)))
+(defn shapelessCarcas [func a b]
+  (if (and (number? a) (number? b)) (func a b) (mapv (partial shapelessCarcas func) a b)))
 
-(defn s+ [a b] (extraCarcas + a b))
-(defn s- [a b] (extraCarcas - a b))
-(defn s* [a b] (extraCarcas * a b))
+(defn s+ [a b] (shapelessCarcas + a b))
+(defn s- [a b] (shapelessCarcas - a b))
+(defn s* [a b] (shapelessCarcas * a b))
 
-(def c+ (vectorOp m+))
-(def c- (vectorOp m-))
-(def c* (vectorOp m*))
-(def cd (vectorOp md))
