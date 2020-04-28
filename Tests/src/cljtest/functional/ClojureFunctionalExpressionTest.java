@@ -1,4 +1,4 @@
-package cljtest.linear;
+package cljtest.functional;
 
 import cljtest.ClojureEngine;
 import cljtest.multi.MultiTests;
