@@ -16,9 +16,10 @@
 (def toString (method :toString))
 
 (defn diffRule [wrap func a b args]
-  (if (= (count a) 1)
-    (func (first a) b args)
-    (func (apply wrap a) b args)))
+  (cond
+    (= (count a) 1) (func (first a) b args)
+    (= (count a) 0) (func b nil args)                   ; функция дифф расчитана, что можем создать унарник о тмнога значений                   ;
+    :else (func (apply wrap a) b args)))
 
 
 (def opProto
@@ -26,18 +27,18 @@
    (fn [obj args] (apply (get obj :func) (mapv #(evaluate %1 args) (get obj :vals))))
    :diff
    (fn [obj args] (let [vals (get obj :vals)]
-                    (diffRule (get obj :wrap) (get obj :differ) (pop vals) (peek vals) args)
+                     (diffRule (get obj :wrap) (get obj :differ) (pop vals) (peek vals) args)
                     ))
    :toString
    (fn [obj] (str "(" (get obj :token) " " (clojure.string/join " " (mapv toString (get obj :vals))) ")")) ; & obj
-  })
+   })
 
 
 (def Add (constructor + opProto #(Add (diff %1 %3) (diff %2 %3)) Add "+"))
 (def Subtract (constructor - opProto #(Subtract (diff %1 %3) (diff %2 %3)) Subtract "-"))
 (def Multiply (constructor * opProto #(Add (Multiply (diff %1 %3) %2) (Multiply %1 (diff %2 %3))) Multiply "*"))
 (def Divide (constructor #(/ (double %1) (double %2)) opProto #(Divide (Subtract (Multiply (diff %1 %3) %2) (Multiply %1 (diff %2 %3))) (Multiply %2 %2)) Divide "/"))
-(def Negate (constructor #(- %1) opProto #(Negate (diff %1 %3)) Negate "negate"))
+(def Negate (constructor #(- %1) opProto #(Negate (diff %1 %3))  Negate "negate"))
 (def constProto
   {:evaluate
    (fn [obj args] (get obj :vals))
@@ -90,6 +91,9 @@
 
 (defn parseObject [str] (parse (read-string str)))
 
+(println "ohoho")
+(println (Negate (Variable "x")))
+(diff (Negate (Variable "x")) "x")
 ;(def exp (parseObject "(* (+ x -550157528.0) 223611682.0)"))
 
 ;(println (toString exp))

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="core.specs.alpha-0.2.44">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../paradigms-2020/clojure/lib/core.specs.alpha-0.2.44.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/core.specs.alpha-0.2.44.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
