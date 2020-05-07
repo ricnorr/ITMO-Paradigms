@@ -16,9 +16,10 @@
 (def toString (method :toString))
 
 (defn diffRule [wrap func a b args]
-  (if (= (count a) 1)
-    (func (first a) b args)
-    (func (apply wrap a) b args)))
+  (cond
+    (= (count a) 1) (func (first a) b args)
+    (= (count a) 0) (func b nil args)                   ; функция дифф расчитана, что можем создать унарник о тмнога значений                   ;
+    :else (func (apply wrap a) b args)))
 
 
 (def opProto
@@ -30,19 +31,19 @@
                     ))
    :toString
    (fn [obj] (str "(" (get obj :token) " " (clojure.string/join " " (mapv toString (get obj :vals))) ")")) ; & obj
-  })
+   })
 
 
-(def Add (constructor + opProto #(Add (diff %1 %3) (diff %2 %3)) Add "Add"))
-(def Subtract (constructor - opProto #(Subtract (diff %1 %3) (diff %2 %3)) Subtract "Subtract"))
-(def Multiply (constructor * opProto #(Add (Multiply (diff %1 %3) %2) (Multiply %1 (diff %2 %3))) Multiply "Multiply"))
-(def Divide (constructor / opProto #(Divide (Subtract (Multiply (diff %1 %3) %2) (Multiply %1 (diff %2 %3))) (Multiply %2 %2)) Divide "Divide"))
-
+(def Add (constructor + opProto #(Add (diff %1 %3) (diff %2 %3)) Add "+"))
+(def Subtract (constructor - opProto #(Subtract (diff %1 %3) (diff %2 %3)) Subtract "-"))
+(def Multiply (constructor * opProto #(Add (Multiply (diff %1 %3) %2) (Multiply %1 (diff %2 %3))) Multiply "*"))
+(def Divide (constructor #(/ (double %1) (double %2)) opProto #(Divide (Subtract (Multiply (diff %1 %3) %2) (Multiply %1 (diff %2 %3))) (Multiply %2 %2)) Divide "/"))
+(def Negate (constructor #(- %1) opProto #(Negate (diff %1 %3))  Negate "negate"))
 (def constProto
   {:evaluate
    (fn [obj args] (get obj :vals))
    :toString
-   (fn [& args] (str "(Constant " (get (first args):vals) ")"))
+   (fn [& args] (format "%.1f" (double (get (first args) :vals))))
    })
 
 (def Constant (fn [val] {:vals val :proto (assoc constProto :diff (fn [& args] (Constant 0)))}))
@@ -54,7 +55,7 @@
    :diff
    (fn [obj args] (if (= args (get obj :vals)) (Constant 1) (Constant 0)))
    :toString
-   (fn [& args] (str "(Variable \"" (get (first args) :vals)"\")"))
+   (fn [& args] (str (get (first args) :vals)))
    }
   )
 
@@ -68,7 +69,7 @@
 (def exp2 (Divide (Add (Multiply (Variable "x") (Variable "x")) (Multiply (Constant 7) (Variable "x")))
                   (Multiply (Constant 13) (Variable "x"))))
 ;;(def exp2 (Divide (Multiply (Variable "x") (Variable "x")) (Constant 10)))
-(println (evaluate (diff exp2 "x") {"x" 1}))
+;;(println (evaluate (diff exp2 "x") {"x" 1}))
 ;(println (toString (diff exp2 "x")))
 
 
@@ -78,4 +79,21 @@
 ;(println (evaluate exp2 {"x" 1 "y" 10}))
 ;(println (evaluate exp3 {"x" 5 "y" 14}))
 ;(println (evaluate exp1 {"x" 10 "y" 20}))
+(def strOper {'+ Add '- Subtract '* Multiply '/ Divide 'Negate Negate 'negate Negate})
 
+(defn parse [expr]
+  (cond
+    (number? expr) (Constant expr)
+    (symbol? expr) (Variable (str expr))
+    (number? (first expr)) (Constant (first expr))
+    (contains? strOper (first expr)) (apply (get strOper (first expr)) (mapv parse (rest expr)))
+    :else (parse (first expr))))
+
+(defn parseObject [str] (parse (read-string str)))
+
+(println "ohoho")
+(println (Negate (Variable "x")))
+(diff (Negate (Variable "x")) "x")
+;(def exp (parseObject "(* (+ x -550157528.0) 223611682.0)"))
+
+;(println (toString exp))
