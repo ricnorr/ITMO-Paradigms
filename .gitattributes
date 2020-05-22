@@ -1,0 +1,3 @@
+*.java linguist-detectable=false
+*.JavaScript linguist-detectable=false
+*.clojure linguist-detectable=false
