@@ -173,5 +173,5 @@
 
 (def parseObjectSuffix  (+parser *comb_parse))
 
-;(print (parseObjectSuffix "(10 negate)"))
+
 
