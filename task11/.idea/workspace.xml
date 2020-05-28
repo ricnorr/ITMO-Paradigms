@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2fd23f57-0bec-45fd-84b2-50d1965b5de6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tests/src/base/Asserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tests/src/base/Asserts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tests/src/cljtest/object/expression.clj" beforeDir="false" afterPath="$PROJECT_DIR$/../Tests/src/cljtest/object/expression.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/src/task5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson/src/task5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task11/expression.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/task11/expression.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task11.iml" beforeDir="false" afterPath="$PROJECT_DIR$/task11.iml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1bB8imsJ8PGnROzPWvaqCiJp6Ce" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="ReplState" timestamp="1588187012777">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Clojure Application.expression (1)">
+    <configuration name="REPL for task11" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="task11" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="expression (1)" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="task11" />
+      <setting name="path" value="$PROJECT_DIR$/src/task11/expression.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/task11" />
+      <method v="2" />
+    </configuration>
+    <configuration name="expression" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="task11" />
+      <setting name="path" value="$PROJECT_DIR$/src/task11/expression.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="user" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="task11" />
+      <setting name="path" value="$PROJECT_DIR$/src/task11/expression.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/task11" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Clojure Application.expression" />
+      <item itemvalue="Clojure Application.user" />
+      <item itemvalue="Clojure Application.expression (1)" />
+      <item itemvalue="Clojure REPL.REPL for task11" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure Application.expression (1)" />
+        <item itemvalue="Clojure Application.expression" />
+        <item itemvalue="Clojure Application.user" />
+        <item itemvalue="Clojure REPL.REPL for task11" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2fd23f57-0bec-45fd-84b2-50d1965b5de6" name="Default Changelist" comment="" />
+      <created>1588094256015</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588094256015</updated>
+      <workItem from="1588094259622" duration="32628000" />
+      <workItem from="1588875079113" duration="8631000" />
+      <workItem from="1589411536650" duration="1497000" />
+      <workItem from="1589450412951" duration="7811000" />
+    </task>
+    <task id="LOCAL-00001" summary="task11 gone tests. Diff should be remade">
+      <created>1588879041829</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588879041829</updated>
+    </task>
+    <task id="LOCAL-00002" summary="task11 diff remade. Basic modification is ready">
+      <created>1588881991187</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588881991187</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="task11 gone tests. Diff should be remade" />
+    <MESSAGE value="task11 diff remade. Basic modification is ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="task11 diff remade. Basic modification is ready" />
+  </component>
+</project>
